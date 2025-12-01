@@ -4,18 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AstroSoul AI</title>
+    <!-- Tailwind CDN for styling (Kept for simplicity) -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
-      // Polyfill for process.env to avoid ReferenceError in browser
-      window.process = {
-        env: {
-          API_KEY: '' // API Key is handled externally or must be manually inserted here for local testing
-        }
-      };
-      
       tailwind.config = {
         theme: {
           extend: {
@@ -79,12 +73,13 @@
   <script type="importmap">
 {
   "imports": {
-    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
-    "react-dom/client": "https://aistudiocdn.com/react-dom@^19.2.0/client",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "@vitejs/plugin-react": "https://aistudiocdn.com/@vitejs/plugin-react@^5.1.1",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0",
     "react/": "https://aistudiocdn.com/react@^19.2.0/",
     "react": "https://aistudiocdn.com/react@^19.2.0",
     "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "vite": "https://aistudiocdn.com/vite@^7.2.6",
     "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24"
   }
 }
@@ -92,7 +87,7 @@
 </head>
   <body>
     <div id="root"></div>
-    <!-- Entry point for the application -->
-    <script type="module" src="./index.tsx"></script>
+    <!-- Vite entry point -->
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
